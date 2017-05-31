@@ -1,0 +1,31 @@
+
+// Base
+$body-bg: #22717F;
+$font-family: "Fira Sans", sans-serif;
+$font-size-base: 16px;
+$font-weight: 400;
+$text-color: #efefef;
+
+// Grid
+$grid-gutter: 5px;
+
+// Panel
+$panel-bg: #33AABF;
+$panel-padding: 12px;
+$panel-border-radius: 10px;
+$panel-title-font-weight: 400;
+
+// News
+$news-border-color: rgba(0, 0, 0, 0.3);
+$news-title-color: white;
+$news-title-size: 18px;
+
+// Media sizings
+$screen-xs-min: 480px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+$screen-xs-max: ($screen-sm-min - 1); // 479
+$screen-sm-max: ($screen-md-min - 1); // 767
+$screen-md-max: ($screen-lg-min - 1); // 991

@@ -1,0 +1,37 @@
+#news {
+  .news-items {
+    max-height: 50vh;
+    overflow-y: auto;
+
+    .news-item {
+      padding: 10px 0;
+      margin: 5px 0;
+      border-top: 1px solid $news-border-color;
+
+      &:last-child {
+        border-bottom: 1px solid $news-border-color;
+      }
+
+      .news-title {
+        display: block;
+        color: $news-title-color;
+        text-decoration: none;
+        font-size: $news-title-size;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .news-description {
+        font-style: italic;
+        border-left: 5px solid rgba(255, 255, 255, 0.3);
+        padding-left: 15px;
+      }
+
+      .news-category {
+
+      }
+    }
+  }
+}

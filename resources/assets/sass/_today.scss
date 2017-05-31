@@ -1,0 +1,21 @@
+#today {
+  .content {
+    @include flexbox();
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+
+    .date {
+      font-size: 33px;
+      font-weight: 600;
+    }
+
+    .time {
+      margin: 10px 0;
+      font-family: "Fira Mono", monospace;
+      font-size: 30px;
+      font-weight: 400;
+    }
+  }
+}

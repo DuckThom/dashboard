@@ -1,0 +1,110 @@
+.column-wrapper {
+  @include flexbox();
+
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100%;
+
+  &.center {
+    justify-content: space-around;
+  }
+
+  .column {
+    padding: ($grid-gutter / 2);
+  }
+
+  &.vertical {
+    flex-direction: column !important;
+    height: 100%;
+
+    & > .column {
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      @for $i from 1 through 12 {
+        $height: ((100% / 12) * $i);
+
+        &.column-#{$i} {
+          @include flex(0 1 $height);
+
+          // Required for the Charts to resize correctly
+          height: $height;
+        }
+      }
+    }
+  }
+
+  &.horizontal {
+    & > .column {
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+
+      @for $i from 1 through 12 {
+        $width: ((100% / 12) * $i);
+
+        &.column-#{$i} {
+          @include flex(0 1 $width);
+
+          // Required for the Charts to resize correctly
+          width: $width;
+        }
+      }
+    }
+  }
+
+  &.large {
+    @media only screen and (max-width: $screen-md-min) {
+      .column {
+        // Required for the Charts to resize correctly
+        width: 100% !important;
+      }
+    }
+
+    @media only screen and (min-width: $screen-lg-min) {
+      flex-direction: row;
+    }
+  }
+
+  &.medium {
+    @media only screen and (max-width: $screen-sm-min) {
+      .column {
+        // Required for the Charts to resize correctly
+        width: 100% !important;
+      }
+    }
+
+    @media only screen and (min-width: $screen-md-min) {
+      flex-direction: row;
+    }
+  }
+
+  &.small {
+    @media only screen and (max-width: $screen-xs-max) {
+      .column {
+        // Required for the Charts to resize correctly
+        width: 100% !important;
+      }
+    }
+
+    @media only screen and (min-width: $screen-sm-min) {
+      flex-direction: row;
+    }
+  }
+
+  &.tiny {
+    @media only screen and (min-width: $screen-xs-min) {
+      flex-direction: row;
+    }
+  }
+}
+
