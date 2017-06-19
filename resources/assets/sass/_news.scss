@@ -1,6 +1,7 @@
 #news {
+  background-image: linear-gradient( 135deg, #FDD819 0%, #E80505 100%);
+
   .news-items {
-    max-height: 50vh;
     overflow-y: auto;
 
     .news-item {

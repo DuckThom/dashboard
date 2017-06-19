@@ -23,6 +23,7 @@
     "chart.js": "^2.5.0",
     "font-awesome": "^4.7.0",
     "moment": "^2.18.1",
-    "normalize.css": "^7.0.0"
+    "normalize.css": "^7.0.0",
+    "numeral": "^2.0.6"
   }
 }

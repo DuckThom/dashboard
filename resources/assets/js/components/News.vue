@@ -1,15 +1,13 @@
 <template>
-    <div class="column column-12">
-        <div class="panel" id="news">
-            <div class="content">
-                <div class="title"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Tweakers nieuws</div>
-                <div class="news-items">
-                    <div class="news-item" v-for="item in news">
-                        <a class="news-title" :href="item.link">{{ item.title }}</a>
-                        <p class="news-description">{{ item.description }}</p>
-                        <div class="news-category">Categorie: {{ item.category }}</div>
-                        <small>Gepubliceerd op: {{ item.date }}</small>
-                    </div>
+    <div class="panel" id="news">
+        <div class="content">
+            <div class="title"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Tweakers nieuws</div>
+            <div class="news-items">
+                <div class="news-item" v-for="item in news">
+                    <a class="news-title" :href="item.link">{{ item.title }}</a>
+                    <p class="news-description">{{ item.description }}</p>
+                    <div class="news-category">Categorie: {{ item.category }}</div>
+                    <small>Gepubliceerd op: {{ item.date }}</small>
                 </div>
             </div>
         </div>

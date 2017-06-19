@@ -10,7 +10,9 @@
   }
 
   .column {
-    padding: ($grid-gutter / 2);
+    @include flexbox();
+
+    flex-direction: column;
   }
 
   &.vertical {

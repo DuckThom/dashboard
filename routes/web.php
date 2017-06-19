@@ -26,4 +26,13 @@ Route::group([
         Route::get('current', 'CurrentController@index');
         Route::get('forecast', 'ForecastController@index');
     });
+
+    Route::group([
+        'prefix' => 'music',
+        'namespace' => 'Music',
+    ], function () {
+        Route::get('token', 'TokenController@index');
+        Route::get('callback', 'CallbackController@index');
+        Route::get('playing', 'PlayingController@index');
+    });
 });

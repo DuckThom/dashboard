@@ -14,13 +14,16 @@
     </head>
     <body>
         <div id="app">
-            <div class="column-wrapper small horizontal" id="today">
+            <div class="column-wrapper small horizontal">
                 <div class="column column-6">
                     <div class="column-wrapper small horizontal">
                         <div class="column column-6">
                             <div class="column-wrapper small vertical">
                                 <div class="column column-3">
                                     <today></today>
+                                </div>
+                                <div class="column column-9">
+                                    <spotify></spotify>
                                 </div>
                             </div>
                         </div>
@@ -30,9 +33,7 @@
                     </div>
                 </div>
                 <div class="column column-6">
-                    <div class="column-wrapper small horizontal">
-                        <news></news>
-                    </div>
+                    <news></news>
                 </div>
             </div>
         </div>

@@ -35,12 +35,14 @@ window.capitalize = function(string) {
 Vue.component('today', require('./components/Today.vue'));
 Vue.component('weather', require('./components/Weather.vue'));
 Vue.component('news', require('./components/News.vue'));
+Vue.component('spotify', require('./components/Spotify.vue'));
 
 const app = new Vue({
     el: '#app',
     components: [
         'today',
         'github-commits',
-        'weather'
+        'weather',
+        'spotify'
     ]
 });
