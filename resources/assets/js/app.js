@@ -41,7 +41,7 @@ const app = new Vue({
     el: '#app',
     components: [
         'today',
-        'github-commits',
+        'news',
         'weather',
         'spotify'
     ]
