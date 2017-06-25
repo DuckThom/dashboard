@@ -1,7 +1,7 @@
 <template>
     <div class="panel" id="spotify">
         <div class="content">
-            <div v-if="authed === 1">
+            <div v-if="authed === 1" id="spotify-authed">
                 <h2 v-if="music.playing">Now playing</h2>
                 <h2 v-else="music.playing">Recently played</h2>
 
