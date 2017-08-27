@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use GuzzleHttp\Exception\TransferException;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use GuzzleHttp\Exception\TransferException;
 
 /**
  * News controller
@@ -15,7 +15,13 @@ use GuzzleHttp\Client;
 class NewsController extends Controller
 {
     /**
-     * Get the news from the tweakers rss feed
+     * Tweakers:    http://feeds.feedburner.com/tweakers/mixed
+     * Nu.nl:       http://www.nu.nl/rss
+     */
+    const NEWS_URL = 'http://www.nu.nl/rss';
+
+    /**
+     * Relay an XML RSS feed to a client in JSON.
      *
      * @param  Request  $request
      * @param  Client  $client
@@ -24,7 +30,7 @@ class NewsController extends Controller
     public function index(Request $request, Client $client)
     {
         try {
-            $response = $client->get('http://feeds.feedburner.com/tweakers/mixed');
+            $response = $client->get(self::NEWS_URL);
         } catch (TransferException $e) {
             \Log::error($e);
 

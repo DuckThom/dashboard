@@ -1,15 +1,11 @@
 <template>
     <div id="forecast-weather" class="text-center">
-        <div class="column-wrapper small horizontal">
-            <div class="column column-12">
-                <div class="text-center">
-                    7-daagse voorspelling
-                </div>
+        <div class="text-center">
+            7-daagse voorspelling
+        </div>
 
-                <div class="chart-wrapper">
-                    <canvas id="forecast-chart"></canvas>
-                </div>
-            </div>
+        <div class="chart-wrapper">
+            <canvas id="forecast-chart"></canvas>
         </div>
     </div>
 </template>
@@ -26,27 +22,18 @@
                     {
                         label: 'Min',
                         data: [],
-                        borderColor: '#113940',
+                        borderColor: '#00B244',
                         backgroundColor: 'transparent',
                         borderWidth: 2
                     },
                     {
                         label: 'Max',
                         data: [],
-                        borderColor: '#FF6918',
+                        borderColor: '#25FF78',
                         backgroundColor: 'transparent',
                         borderWidth: 2
                     }
                 ]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            stepSize: 1
-                        }
-                    }]
-                }
             }
         });
     }

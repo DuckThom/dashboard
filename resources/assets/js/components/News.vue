@@ -1,7 +1,9 @@
 <template>
-    <div class="panel" id="news">
+    <div class="panel" :style="style" id="news">
+        <div class="title">
+            <i class="fa fa-newspaper-o"></i> News
+        </div>
         <div class="content">
-            <div class="title"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Tweakers nieuws</div>
             <div class="news-items">
                 <div class="news-item" v-for="item in news">
                     <a class="news-title" :href="item.link">{{ item.title }}</a>
@@ -65,6 +67,12 @@
     getNews();
 
     export default {
+        props: ['area'],
+        computed: {
+            style () {
+                return 'grid-area: ' + this.area;
+            }
+        },
         data: function () {
             return data
         },

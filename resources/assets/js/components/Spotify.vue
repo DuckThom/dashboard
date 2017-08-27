@@ -1,9 +1,13 @@
 <template>
-    <div class="panel" id="spotify">
+    <div class="panel" :style="style" id="spotify">
+        <div class="title">
+            <i class="fa fa-fw fa-music"></i> Spotify
+        </div>
         <div class="content">
             <div v-if="authed === 1" id="spotify-authed">
-                <h2 v-if="music.playing">Now playing</h2>
-                <h2 v-else="music.playing">Recently played</h2>
+                <div id="album-art-bg-wrapper">
+                    <img v-if="music.song.albumArt" :src="music.song.albumArt" />
+                </div>
 
                 <div class="song-info">
                     <span class="song-title">{{ music.song.name }}</span>
@@ -11,15 +15,25 @@
                 </div>
 
                 <div class="playback-wrapper">
-                    <span class="playback-time">{{ music.playback.now }}</span> / <span class="playback-end">{{ music.playback.end }}</span>
+                    {{ music.playback.now }}
+
+                    <br />
+
+                    {{ music.playback.end }}
                 </div>
             </div>
             <div v-else-if="authed === 0">
-                <a class="login-button" :href="authUrl">Login with Spotify</a>
+                <a class="login-button" :href="authUrl">Login via Spotify</a>
             </div>
         </div>
     </div>
 </template>
+
+<style scoped>
+    .panel {
+        background: transparent;
+    }
+</style>
 
 <script>
     let data = {
@@ -34,7 +48,8 @@
                 end: '00:00'
             },
             song: {
-                name: 'Song name',
+                albumArt: false,
+                name: 'Name',
                 artist: 'Artist'
             }
         }
@@ -42,7 +57,11 @@
 
     function getMusic() {
         if (data.authed) {
-            axios.get('/api/music/playing')
+            setTimeout(getMusic, 1000);
+
+            axios.get('/api/music/playing', {
+                    timeout: 1500
+                })
                 .then(function(response) {
                     let responseData = response.data;
                     let payload = JSON.parse(responseData.payload);
@@ -54,12 +73,11 @@
                             end: numeral(Math.floor(payload.item.duration_ms / 1000)).format('h:mm:ss')
                         },
                         song: {
+                            albumArt: payload.item.album.images[0].url,
                             name: payload.item.name,
                             artist: payload.item.artists[0].name
                         }
                     };
-
-                    getMusic();
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -68,6 +86,12 @@
     }
 
     export default {
+        props: ['area'],
+        computed: {
+            style () {
+                return 'grid-area: ' + this.area;
+            }
+        },
         data: function () {
             return data
         },

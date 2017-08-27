@@ -29,7 +29,7 @@ class TokenController extends Controller
      */
     public function index(Request $request)
     {
-        if (session('spotify.access_token')) {
+        if (session('spotify.access_token') && session('spotify.access_token_timeout') > (time() - 60)) {
             return response([
                 'payload' => [
                     'token' => session('spotify.access_token')

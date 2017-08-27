@@ -1,19 +1,29 @@
 
 // Base
-$body-bg: #22717F;
-$font-family: "Fira Sans", sans-serif;
-$font-size-base: 16px;
+$body-bg: #2D394A;
+$font-size-base: 14px;
 $font-weight: 400;
 $text-color: #efefef;
 
 // Grid
-$grid-gutter: 7px;
+$grid-gutter: 1.5vh;
+$grid-template:
+        "today   spotify spotify jira stash"
+        "weather .       .       jira stash"
+        "news    news    news    jira stash"
+        "news    news    news    jira stash";
+
+// Font
+$font-family: "Fira Sans", sans-serif;
+$font-family-monospace: "Fira Mono", monospace;
 
 // Panel
-$panel-bg: #33AABF;
-$panel-padding: 12px;
-$panel-border-radius: 10px;
+$panel-background: #5C7396;
+$panel-padding: 0;
+$panel-border-radius: 0;
 $panel-title-font-weight: 400;
+$panel-title-background: rgba(0,0,0,0.3);
+$panel-footer-background: rgba(0,0,0,0.1);
 
 // News
 $news-border-color: rgba(0, 0, 0, 0.3);

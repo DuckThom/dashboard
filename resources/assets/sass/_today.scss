@@ -1,6 +1,4 @@
 #today {
-  background-image: linear-gradient( 135deg, #52E5E7 0%, #130CB7 100%);
-
   .content {
     @include flexbox();
     flex-direction: column;

@@ -20,6 +20,14 @@ Route::group([
     Route::get('news', 'NewsController@index');
 
     Route::group([
+        'prefix' => 'stash',
+        'namespace' => 'Stash'
+    ], function () {
+        Route::get('esb-commits', 'CommitController@zegroEsb');
+        Route::get('magento-commits', 'CommitController@zegroMagento');
+    });
+
+    Route::group([
         'prefix' => 'weather',
         'namespace' => 'Weather'
     ], function () {

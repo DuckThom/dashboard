@@ -36,6 +36,7 @@ Vue.component('today', require('./components/Today.vue'));
 Vue.component('weather', require('./components/Weather.vue'));
 Vue.component('news', require('./components/News.vue'));
 Vue.component('spotify', require('./components/Spotify.vue'));
+Vue.component('stash', require('./components/Stash.vue'));
 
 const app = new Vue({
     el: '#app',
@@ -43,6 +44,7 @@ const app = new Vue({
         'today',
         'news',
         'weather',
-        'spotify'
+        'spotify',
+        'stash'
     ]
 });

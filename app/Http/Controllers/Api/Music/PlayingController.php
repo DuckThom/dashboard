@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Music;
 
 use GuzzleHttp\Client;
+use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use GuzzleHttp\Exception\BadResponseException;
 
@@ -14,7 +15,9 @@ use GuzzleHttp\Exception\BadResponseException;
 class PlayingController extends Controller
 {
     /**
+     * Get the song that is currently playing
      *
+     * @return JsonResponse
      */
     public function index()
     {
@@ -29,7 +32,14 @@ class PlayingController extends Controller
             $code = $response->getStatusCode();
             $payload = $response->getBody()->getContents();
         } catch (BadResponseException $e) {
+            \Log::warning($e->getMessage());
+
             $code = $e->getResponse()->getStatusCode();
+
+            if ($code === 401) {
+                \Log::debug(json_encode(session()));
+            }
+
             $payload = [
                 "message" => "Loading from Spotify API failed.",
             ];

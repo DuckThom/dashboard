@@ -1,3 +1,20 @@
+// CSS Grid
+.grid {
+  position: fixed;
+  display: grid;
+  left: 0;
+  top: 0;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: $grid-gutter;
+  padding: $grid-gutter;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  grid-template-areas: $grid-template;
+}
+
+// Flexbox Grid
 .column-wrapper {
   @include flexbox();
 
@@ -109,4 +126,3 @@
     }
   }
 }
-

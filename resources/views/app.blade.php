@@ -13,29 +13,16 @@
         <link href="{{ mix('assets/css/app.css') }}" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div id="app">
-            <div class="column-wrapper small horizontal">
-                <div class="column column-6">
-                    <div class="column-wrapper small horizontal">
-                        <div class="column column-6">
-                            <div class="column-wrapper small vertical">
-                                <div class="column column-3">
-                                    <today></today>
-                                </div>
-                                <div class="column column-9">
-                                    <spotify></spotify>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column column-6">
-                            <weather></weather>
-                        </div>
-                    </div>
-                </div>
-                <div class="column column-6">
-                    <news></news>
-                </div>
-            </div>
+        <div id="app" class="grid">
+            <today area="today"></today>
+
+            <weather area="weather"></weather>
+
+            <spotify area="spotify"></spotify>
+
+            <news area="news"></news>
+
+            <stash area="stash"></stash>
         </div>
 
         <script src="{{ mix('assets/js/app.js') }}"></script>
